@@ -1,0 +1,92 @@
+.todo-form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px auto 18px;
+  width: 100%;
+  max-width: 620px;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 14px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.18), transparent 60%),
+              rgba(4, 6, 16, 0.72);
+  color: #f7f7ff;
+  font-size: 15px;
+  outline: none;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+  transition:
+    box-shadow var(--transition-normal),
+    border-color var(--transition-fast),
+    background var(--transition-normal),
+    transform 0.12s ease-out;
+}
+
+.todo-input::placeholder {
+  color: rgba(155, 160, 184, 0.9);
+}
+
+.todo-input:focus {
+  border-color: var(--accent-strong);
+  box-shadow: 0 0 0 1px rgba(255, 179, 71, 0.4), 0 18px 40px rgba(0, 0, 0, 0.7);
+  transform: translateY(-1px);
+}
+
+.todo-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.add-btn {
+  padding: 13px 22px;
+  border-radius: 999px;
+  border: none;
+  background: radial-gradient(circle at 0 0, #ffe5b4, #ffb347);
+  color: #191621;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 16px 32px rgba(255, 179, 71, 0.45);
+  transition:
+    transform 0.12s ease-out,
+    box-shadow 0.18s ease-out,
+    filter 0.2s ease-out;
+}
+
+.add-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 40px rgba(255, 179, 71, 0.6);
+  filter: brightness(1.04);
+}
+
+.add-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 10px 22px rgba(255, 179, 71, 0.4);
+}
+
+.add-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+@media (max-width: 600px) {
+  .todo-form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .add-btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
